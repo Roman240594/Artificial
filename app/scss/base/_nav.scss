@@ -1,0 +1,119 @@
+.nav {
+    
+    &__btn {
+        display: none;
+
+        @media screen and (max-width: 990px) {
+            display: block;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__line {
+        height: 2px;
+        background-color: $color-white;
+        position: absolute;
+
+        &-top {
+            width: 17px;
+            top: 0;
+            right: 0;
+            transition: all ease-in .5s;
+
+            &_active {
+                transform: rotate(-45deg);
+                top: 9px;
+                right: 1px;
+                transition: all ease-in .5s;
+            }
+        }
+
+        &-center {
+            width: 100%;
+            top: 14px;
+            transition: all ease-in .5s;
+
+            &_active {
+                transform: rotate(45deg);
+                transition: all ease-in .5s;
+            }
+        }
+
+        &-bottom {
+            width: 17px;
+            bottom: 0;
+            transition: all ease-in .5s;
+
+            &_active {
+                transform: rotate(-45deg);
+                bottom: 9px;
+                left: 2px;
+                transition: all ease-in .5s;
+            }
+        }
+    }
+
+    &__list {
+        
+        @media screen and (max-width: 990px) {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            right: 0;
+            top: 100px;
+            background-color: transparent;
+            text-align: center;
+            transition: all, 1s;
+            transform: translateY(-200%);
+            text-align: center;
+        }
+
+        @include respond-to(tablet-portrait) {
+            margin-top: 10px;
+            background-color: rgba(58, 104, 184, .2);
+            border-radius: 20px 0 0 0;
+        }
+
+        &_active {
+            transform: translateY(0);
+            transition: all, 1s;
+        }
+    }
+
+    &__item {
+        padding: 0 20px;
+
+        @media screen and (max-width: 990px) {
+            padding: 10px 0;
+        }
+        
+        @include respond-to(tablet-portrait) {
+            border-bottom: 1px solid $color-white;
+        }
+    }
+
+    &__link {
+        font-family: $font-semibold;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 22px;
+        color: $color-white;
+        transition: all .5s;
+
+        @media screen and (max-width: 990px) {
+            padding: 0 40px;
+        }
+        
+        &:hover {
+            color: $color-blue;
+        }
+    }
+}
